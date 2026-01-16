@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    uses: youngseokyoon/central-workflows/.github/workflows/compile-cpp.yml@main
+    with:
+      compiler: gcc
+      build-type: Release
+      cmake-args: "-DENABLE_TESTS=OFF"
+      working-directory: src
+      output-path: build
+      env-vars: '{"CC":"gcc-11","CXX":"g++-11"}'
+  
+  upload:
+    needs: build
+    uses: youngseokyoon/central-workflows/.github/workflows/upload-artifact.yml@main
+    with:
+      artifact-name: cpp-build-output
+      artifact-path: src/build/bin/
+      retention-days: 30
