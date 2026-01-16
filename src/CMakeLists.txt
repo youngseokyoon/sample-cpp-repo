@@ -15,7 +15,7 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 
 # Executable
-add_executable(sample_app src/main.cpp)
+add_executable(sample_app main.cpp)
 
 # Display build configuration
 message(STATUS "=================================")
