@@ -2,6 +2,8 @@
 #include <string>
 
 int main(int argc, char* argv[]) {
+    std::cout << "TEST" << std:endl;
+
     std::cout << "==================================" << std::endl;
     std::cout << "  Sample C++ Application" << std::endl;
     std::cout << "==================================" << std::endl;
