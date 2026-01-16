@@ -16,7 +16,6 @@ jobs:
       cmake-args: "-DENABLE_TESTS=OFF"
       working-directory: src
       output-path: build
-      # env-vars를 제거하여 시스템 기본 gcc/g++ 사용
   
   upload:
     needs: build
